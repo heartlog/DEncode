@@ -1,0 +1,120 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>URL Decoder/Encoder</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+<script type="text/javascript">
+function encode() {
+	var obj = document.getElementById('Frontcoder');
+	var unencoded = obj.value;
+	obj.value = encodeURIComponent(unencoded).replace(/'/g,"%27").replace(/"/g,"%22");	
+}
+function decode() {
+	var obj = document.getElementById('Frontcoder');
+	var encoded = obj.value;
+	obj.value = decodeURIComponent(encoded.replace(/\+/g,  " "));
+}
+function copy() {
+  let textarea = document.getElementById("Frontcoder");
+  textarea.select();
+  document.execCommand("copy");
+}
+function Clear() {
+  document.getElementById("Frontcoder").value = "";
+  alert("Successfully cleared 👍")
+}
+</script>
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Heartlog♥️</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<br>
+
+    <div class="container">
+      <h1 class="display-4">URL Encoder/Decoder</h1>
+      <p class="lead fw-lighter">Encode or Decode URLs and data effortlessly. Simplify the process with this simple & user-friendly site.</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+
+<br>
+
+
+<form onsubmit="return false;" class="form-control">
+<!--div class="spinner-grow text-primary" role="status">
+  <span class="visually-hidden">Working...</span>
+</div><h1>URL Decoder/Encoder</h1-->
+<br>
+<div class="form-floating">
+  <textarea class="form-control" placeholder="Paste URL/data here" id="Frontcoder" style="height: 100px"></textarea>
+  <label for="floatingTextarea">Type or paste <u>URL/Data</u> here</label>
+</div>
+<br>
+<br>
+<div class="d-grid gap-2 col-6 mx-auto">
+<input type="button" class="w-20 btn btn-lg btn-outline-primary" onclick="encode()" value="Encode">
+<input type="button" class="w-20 btn btn-lg btn-outline-primary" onclick="decode()" value="Decode">
+<input type="button" class="w-20 btn btn-outline-secondary" onclick="copy()" value="Copy text">
+<input type="button" class="w-20 btn btn-outline-warning" onclick="Clear()" value="Clear">
+</div>
+</form>
+<br>
+   <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2 class="fw-dark text-primary">About</h2>
+          <p>Our site is designed with simplicity in mind. The intuitive interface makes it easy for users of all skill levels to encode or decode URLs effortlessly. Simply enter the URL or encoded string into the designated field, and with a single click, our JavaScript-based tool will handle the encoding or decoding process for you.</p>
+        </div>
+        <div class="col-md-6">
+          <h2 class="fw-dark text-primary">Services</h2>
+          <p>Powered by an <mark>open-source</mark> codebase, our tool ensures transparency and flexibility, allowing users to explore and modify the underlying logic as needed. </p>
+        </div>
+      </div>
+    </div>
+
+
+<footer class="bg-light py-4">
+    <div class="container text-center">
+      <p>&copy; 2023 heartlog.github.io. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
